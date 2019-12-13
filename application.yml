@@ -1,1 +1,14 @@
-spring.profiles.active=dev
+spring:
+  profiles:
+    active: -dev
+---
+spring:
+  profiles: dev #开发环境
+  application:
+    name: cloudservice-config-dev
+---
+spring:
+  profiles: test #开发环境
+  application:
+    name: cloudservice-config-test
+    #请保存为utf-8格式
