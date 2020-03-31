@@ -31,7 +31,7 @@ sgmw:
     username: sgmw_sys
 spring:
   application:
-    name: baowei-admin
+    name: bw-admin
   #mq地址
   rabbitmq:
     host: 96.3.0.68
