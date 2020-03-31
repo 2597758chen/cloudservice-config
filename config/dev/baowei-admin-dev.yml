@@ -1,0 +1,77 @@
+#eureka:
+#  client:
+#    service-url:
+#      defaultZone: http://admin:admin@localhost:10010/eureka/
+#  instance:
+#    instance-id: ${spring.cloud.client.ip-address}:${server.port}
+#    prefer-ip-address: true
+fastdfs:
+  charset: UTF-8
+  connect_timeout_in_seconds: 60
+  http_anti_steal_token: false
+  http_secret_key: 123456
+  http_tracker_http_port: 6666
+  network_timeout_in_seconds: 60
+  tracker_servers: 172.22.1.8:22122
+jdbc:
+  pool:
+    max:
+      active: 3
+logging:
+  config: classpath:log4j2-dev.xml
+server:
+#  port: 8081
+  tomcat:
+    uri-encoding: UTF-8
+sgmw:
+  datasource:
+    driver-class-name: oracle.jdbc.OracleDriver
+    password: sgmw_sys
+    url: jdbc:oracle:thin:@//172.22.1.6:1521/SGMWDEV
+    username: sgmw_sys
+spring:
+  application:
+    name: baowei-admin
+  #mq地址
+  rabbitmq:
+    host: 96.3.0.68
+    port: 5672
+    username: admin
+    password: TEL.lz@100009
+  datasource:
+    connectProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=500
+    druid:
+      minEvictableIdleTimeMillis: 30000
+      testOnBorrow: false
+      testOnReturn: false
+    filters: stat,wall
+    initialSize: 5
+    maxActive: 20
+    maxPoolPreparedStatementPerConnectionSize: 20
+    maxWait: 60000
+    minIdle: 5
+    testWhileIdle: true
+    timeBetweenEvictionRunsMillis: 60000
+    useGlobalDataSourceStat: true
+    validationQuery: select 1 from dual
+  http:
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+  servlet:
+    multipart:
+      enabled: true
+      file-size-threshold: 0
+      max-file-size: 50MB
+      max-request-size: 100MB
+token:
+  continue_time: 60
+  effective_time:
+    app: 1
+not_app: 30
+info:
+  name: "@project.artifactId@"
+  description: "@project.description@"
+  version: "@project.version@"
+  test: "测试测试"
